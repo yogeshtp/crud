@@ -5,6 +5,7 @@
 }
 body {
   height: 100vh;
+  position: relative;
 }
 h1 {
   text-align: center;
@@ -32,4 +33,31 @@ tbody tr:hover {
 
 .form {
   display: none;
+}
+
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modal h1 {
+  text-align: center;
+}
+
+.modal-unactive {
+  display: none;
+}
+
+.show-modal {
+  position: relative;
+  background-color: blue;
+}
+.show-modal span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  color: red;
 }

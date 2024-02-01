@@ -4,6 +4,7 @@ let formInput = document.querySelector("#crud_input");
 let submitBtn = document.querySelector("#submit");
 let theadbody = document.querySelector("tbody");
 let form = document.querySelector(".form");
+let activeModal = document.querySelector("#modal")
 formInput.value = "";
 
 // createTask.addEventListener("click", createCrud);
@@ -39,6 +40,9 @@ function createCrud() {
       .addEventListener("click", function () {
         deleteCrud(taskName);
       });
+    taskName.querySelector(".readCrud").addEventListener("click", function () {
+      readCrud(taskName);
+    });
   });
 }
 
@@ -56,5 +60,11 @@ function deleteCrud(tr) {
   tr.remove();
 }
 
-
-
+function readCrud(tr) {
+  activeModal.classList.remove("modal-unactive");
+  document.querySelector("#viewTask").textContent =
+    tr.querySelector("td").innerHTML;
+  document.querySelector("#close").addEventListener("click", function () {
+    activeModal.classList.add("modal-unactive");
+  });
+}
